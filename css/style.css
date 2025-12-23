@@ -236,8 +236,13 @@ section {
     max-width: 1030px;
     margin: 0 auto;
 }
+.slider {
+    border-width: 1px 1px 1px 0.5px;
+    border-style: solid;
+    border-color: #ACACAC;
+}
 .slider .slick-slide {
-    height: auto; 
+    height: 559px; 
 }
 
 /* slider dots */
@@ -256,8 +261,8 @@ section {
 }
 .slick-dots li button:before {
     content: "" !important; /* デフォルトの「・」を消す */
-    width: 14px;
-    height: 14px;
+    width: 14px !important;
+    height: 14px !important;
     background: #ccc; /* 通常時の色 */
     border-radius: 50%; /* 丸くする */
     opacity: 1; /* 透明度を1にする */
@@ -267,10 +272,15 @@ section {
 }
 /* slider dots */
 
-post-card {
-    border: 1px solid #e0e0e0; /* 四角い枠線 */
-    background: #fff;
-    margin: 0 10px;            /* スライド間の隙間 */
+.post-card {
+    height: 559px;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 1px;
+    border-left: 0;
+    border-style: solid;
+    border-color: #ACACAC;
+    margin-right: -0.5px;
     display: flex;
     flex-direction: column;
 }
@@ -283,22 +293,39 @@ post-card {
 
 /* テキスト部分の余白と装飾 */
 .card-content {
-    padding: 20px;             /* 枠の内側の余白 */
+    padding: 25px;             /* 枠の内側の余白 */
     text-align: left;
 }
-
-.card-title {
-    font-size: px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-    line-height: 1.5;
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: #fff9cc;
+    margin: 0 0 22px 0;
 }
-
+.tag a {
+    font-size: 14px;
+    color: #f4a000;
+    text-decoration: none;
+}
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 22px 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
 .card-date {
     font-size: 14px;
-    color: #888;
+    color: #ACACAC;
     margin: 0;
 }
 header-post-slider .slick-dots {
-    bottom: -50px !important; /* カードの下端からの距離を再調整 */
+    bottom: -50px !important;
 }
+.slider .slick-slide:last-child .post-card {
+    border-right: none;
+}
+/* テキスト部分の余白と装飾 */
