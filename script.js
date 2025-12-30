@@ -40,13 +40,25 @@ buttonC.addEventListener('click', function() {
 
 
 
-var show = 6; //最初に表示する件数
-var num = 3;  //clickごとに表示したい件数
+
+var show = 4; // 最初に表示する件数
+var num = 4;  // clickごとに表示したい件数
 var contents = '.list li'; // 対象のlist
+
+// 最初は「show」番目以降の要素に is-hidden をつけて隠す
 $(contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
+
 $('.more').on('click', function () {
-  $(contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
+  // 隠れている要素のうち、num個分を選択
+  var $target = $(contents + '.is-hidden').slice(0, num);
+
+  // 1. is-hidden クラスを削除
+  // 2. 一旦 hide() で隠してから fadeIn() でふわっと出す
+  // これにより、高さが「ガクッ」とならずに、footerが「スルスル」と下に下がります
+  $target.removeClass('is-hidden').hide().fadeIn(400);
+
+  // もし隠れている要素がもう無ければ「もっと見る」ボタンを消す
   if ($(contents + '.is-hidden').length == 0) {
-    $('.more').fadeOut();
+    $(this).fadeOut(); // $('.more') を $(this) にするとより安全です
   }
 });

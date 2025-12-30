@@ -538,30 +538,26 @@ header-post-slider .slick-dots {
 /* ➂切り替え画面 */
 .screen{
     width: 100%;
-    height: 500px;
     position: relative;
 }
 
 /* 共通設定：すべての画面を重ねて配置し、アニメーションを付与 */
 .a_screen, .b_screen, .c_screen {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    display: none;
     transition: opacity 0.5s ease; /* 0.5秒かけてふわっと切り替わる */
 }
 
 /* ➃A画面 */
 .a_screen{
-    opacity: 1;
+    display: block;
     pointer-events: auto;
     background-color: #febfbf;
 }
 
 /* ➃A画面 active (BやCが押された時に消える) */
 .a_screen.active{
-    opacity: 0;
+    display: none;
     pointer-events: none;
 }
 
@@ -574,7 +570,7 @@ header-post-slider .slick-dots {
 
 /* ➄B画面 active (Bが押された時に出る) */
 .b_screen.active{
-    opacity: 1;
+    display: block;
     pointer-events: auto;
 }
 
@@ -587,7 +583,7 @@ header-post-slider .slick-dots {
 
 /* ➅C画面 active (Cが押された時に出る) */
 .c_screen.active{
-    opacity: 1;
+    display: block;
     pointer-events: auto;
 }
 
@@ -597,16 +593,13 @@ header-post-slider .slick-dots {
 }
 .list {
   flex-wrap: wrap;
-  margin: 40px 0 0;
   display: flex;
   justify-content: center;
 }
 .list li {
   box-sizing: border-box;
-  margin: 0 10px 20px;
   text-align:center;
-  background:#C5CAE9;
-  padding:10px;
+  padding:30px 0;
   opacity: 1;
   height:auto;
   flex-basis: calc(100% - 20px); /* 33.33% から 100% に変更 */
@@ -615,7 +608,7 @@ header-post-slider .slick-dots {
   overflow:hidden;
 }
 .list li.is-hidden {
-  visibility: hidden;
+  display: none;
   opacity: 0;
   height: 0;
   margin: 0 10px;
