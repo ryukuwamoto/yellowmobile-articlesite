@@ -481,3 +481,158 @@ header-post-slider .slick-dots {
 /* sec_top_B */
 
 /* sec_top_C */
+.category-list2 {
+    display: flex;
+    justify-content: center;
+    gap: 5px;          /* ボタン同士の隙間（お好みで） */
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+.item {
+    flex: 1;            /* これでli同士が均等な幅になります */
+    height: 54px;       /* 高さを指定 */
+    display: flex;      /* 中のボタンを制御 */
+}
+/* ➀切り替えボタン */
+.button {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    width: 100%;        /* liの横幅いっぱいに広げる ★最重要 */
+    height: 100%;       /* liの縦幅いっぱいに広げる */
+    border: none;       /* デフォルトの枠線を消す */
+    cursor: pointer;
+    border-radius: 5px; /* liに合わせて角丸にする */
+    font-weight: bold;
+    display: block;
+}
+/* Aボタン */
+#a_btn{
+    background-color: #ffe100;  /* 背景色：赤 */
+}
+
+/* Aボタン active */
+#a_btn.active{
+    background-color: #fff9cc;  /* 文字色：白 */
+}
+
+/* Bボタン */
+#b_btn{
+    background-color: #fff9cc;  /* 文字色：白 */
+}
+
+/* Bボタン active */
+#b_btn.active{
+    background-color: #ffe100;  /* 背景色：青 */
+}
+/* Cボタン */
+#c_btn{
+    background-color: #fff9cc;  /* 文字色：白 */
+}
+
+/* Cボタン active */
+#c_btn.active{
+    background-color: #ffe100;  /* 背景色：青 */
+}
+/* ➂切り替え画面 */
+.screen{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+/* 共通設定：すべての画面を重ねて配置し、アニメーションを付与 */
+.a_screen, .b_screen, .c_screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease; /* 0.5秒かけてふわっと切り替わる */
+}
+
+/* ➃A画面 */
+.a_screen{
+    opacity: 1;
+    pointer-events: auto;
+    background-color: #febfbf;
+}
+
+/* ➃A画面 active (BやCが押された時に消える) */
+.a_screen.active{
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ➄B画面 */
+.b_screen{
+    opacity: 0;
+    pointer-events: none;
+    background-color: #b2d4f7;
+}
+
+/* ➄B画面 active (Bが押された時に出る) */
+.b_screen.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --- ➅C画面（新規追加） --- */
+.c_screen{
+    opacity: 0;
+    pointer-events: none;
+    background-color: #bdf7b2; /* 背景色：薄い緑 */
+}
+
+/* ➅C画面 active (Cが押された時に出る) */
+.c_screen.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+.list {
+  flex-wrap: wrap;
+  margin: 40px 0 0;
+  display: flex;
+  justify-content: center;
+}
+.list li {
+  box-sizing: border-box;
+  margin: 0 10px 20px;
+  text-align:center;
+  background:#C5CAE9;
+  padding:10px;
+  opacity: 1;
+  height:auto;
+  flex-basis: calc(100% - 20px); /* 33.33% から 100% に変更 */
+  max-width: calc(100% - 20px);
+  transition: all .4s ease 0s;
+  overflow:hidden;
+}
+.list li.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  margin: 0 10px;
+  padding:0;
+}
+.more {
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  background-color: #5C6BC0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color:#fff;
+  padding: 0;
+  line-height: 40px;
+  width: 160px;
+  border-radius: 20px;
+}
