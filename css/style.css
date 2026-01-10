@@ -17,7 +17,7 @@
     margin: 0 auto;
     padding-top: 30px;
 }
-img {
+.header img {
     max-width: 100%;
     height: auto;
     vertical-align: bottom;
@@ -552,7 +552,7 @@ header-post-slider .slick-dots {
 .a_screen{
     display: block;
     pointer-events: auto;
-    background-color: #febfbf;
+    background-color: white;
 }
 
 /* ➃A画面 active (BやCが押された時に消える) */
@@ -563,9 +563,9 @@ header-post-slider .slick-dots {
 
 /* ➄B画面 */
 .b_screen{
-    opacity: 0;
+    display: none;
     pointer-events: none;
-    background-color: #b2d4f7;
+    background-color: white;
 }
 
 /* ➄B画面 active (Bが押された時に出る) */
@@ -576,9 +576,9 @@ header-post-slider .slick-dots {
 
 /* --- ➅C画面（新規追加） --- */
 .c_screen{
-    opacity: 0;
+    display: none;
     pointer-events: none;
-    background-color: #bdf7b2; /* 背景色：薄い緑 */
+    background-color: white; /* 背景色：薄い緑 */
 }
 
 /* ➅C画面 active (Cが押された時に出る) */
@@ -588,50 +588,203 @@ header-post-slider .slick-dots {
 }
 
 .container{
-  width: 100%;
-  margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
 .list {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 60px;
 }
 .list li {
     display: flex;
-  box-sizing: border-box;
-  text-align:center;
-  padding:30px 0;
-  opacity: 1;
-  height:auto;
-  flex-basis: calc(100% - 20px); /* 33.33% から 100% に変更 */
-  max-width: calc(100% - 20px);
-  transition: all .4s ease 0s;
-  overflow:hidden;
+    box-sizing: border-box;
+    text-align:center;
+    padding:30px 0;
+    opacity: 1;
+    height:auto;
+    flex-basis: 100%; /* 33.33% から 100% に変更 */
+    width: 100%;
+    height: 256px;
+    border-bottom: 1px solid #ACACAC;
 }
 .list li.is-hidden {
-  display: none;
-  opacity: 0;
-  height: 0;
-  margin: 0 10px;
-  padding:0;
+    display: none;
+    opacity: 0;
+    height: 0;
+    margin: 0 10px;
+    padding:0;
 }
 .more {
-  text-align: center;
-  margin-top: 20px;
-}
-button {
-  background-color: #5C6BC0;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color:#fff;
-  padding: 0;
-  line-height: 40px;
-  width: 160px;
-  border-radius: 20px;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto 60px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #727272;
+    padding: 15px 90px;
+    border: 1px solid #727272;
+    border-radius: 2px;
 }
 .card-image2 {
+    width: 294px;
+    height: auto;
+    overflow: hidden;
+}
+.card-image2-1 {
+    width: 294px;
+    height: auto;
+}
+.card-image2 a:hover img {
+    transform: scale(1.05);
+    transition: transform 500ms ease;
+}
+.card-content2 {
+    margin: auto 0;
+    padding: 0 26px 0 24px;             /* 枠の内側の余白 */
+    text-align: left;
+    align-items: center;
+    
+}
+.thumbnail {
+    width: 294px;
+    transition: transform 500ms ease;
+}
+
+/* footer */
+.footer-top {
+    position: relative;
+    display: block;
+    background-color: #F5F5F5;
+}
+.footer-info {
+    display: flex;
+    margin-bottom: 60px;
+    justify-content: space-between;
+    gap: 40px;
+    list-style: none;
+}
+.footer-item {
+    position: relative;
     width: 100%;
-    height: 247px;    /* 画像の高さに合わせる */
-    overflow: hidden; /* ★重要：枠からはみ出た分を隠す */
+}
+.footer-category {
+    width: 100%;
+    height: auto;
+}
+.footer-category-title {
+    padding-top: 37px;
+    font-size: 14px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #acacac;
+}
+.footer-category-item {
+    list-style: none;
+}
+.footer-category-item li {
+    border-bottom: 1px solid #acacac;
+}
+.footer-category-item li:hover {
+    background-color: #e9e9e9;
+}
+.folder-sharp {
+    font-size: 16px;
+}
+.item-wrap {
+    display: flex;
+    align-items: center;  /* ★上下の中央をピッタリ揃える */
+    gap: 10px;
+    padding: 14px 0;
+    text-decoration: none;
+    color: black;
+}
+.item-wrap p {
+    margin: 0;            /* pタグ特有の上下余白を消してズレを防止 */
+    line-height: 1;
+    font-size: 14px;       /* 行の高さを調整して中央に合わせやすくする */
+}
+.item-wrap2 {
+    display: flex;
+    align-items: center;
+    padding: 14px 0 14px 23px;
+    text-decoration: none;
+    color: black;
+}
+.item-wrap2 p {
+    margin: 0;            /* pタグ特有の上下余白を消してズレを防止 */
+    line-height: 1;
+    font-size: 13px;
+    padding-left: 4px;       /* 行の高さを調整して中央に合わせやすくする */
+}
+.chevron-forward {
+    font-size: 14px;
+}
+
+.archive-select-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 20px 0 110px;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 13px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #acacac;
+    border-radius: 2px;
+    cursor: pointer;
+    appearance: none; /* デフォルトの矢印を消す */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.select-arrow-icon {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    font-size: 16px;
+    color: #727272;
+    pointer-events: none; /* クリックを貫通させる */
+}
+
+/* タグエリア全体の余白 */
+.tag-section {
+    padding: 20px 0;
+}
+
+/* タグを包むコンテナ */
+.tagcloud {
+    display: flex;
+    flex-wrap: wrap;      /* 端にきたら折り返す */
+    gap: 8px;            /* タグ同士の縦横の隙間 */
+    margin-top: 15px;
+}
+
+/* 個別のタグリンク */
+.tag-cloud-link {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 12px;      /* サイズを一定に統一 */
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;   /* 少し角を丸く。20pxにするとカプセル型になります */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 全てのタグの前に # をつける */
+.tag-cloud-link::before {
+    content: "#";
+    margin-right: 4px;
+    color: #555;
+}
+/* マウスを乗せた時の動き */
+.tag-cloud-link:hover {
+    background-color: #f9f9f9; /* サイトのテーマカラー（黄色） */
+    border-color: #e9e9e9;
+    color: #000;
 }
