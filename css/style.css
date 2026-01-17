@@ -122,6 +122,75 @@
     padding-top: 30px;
     padding-bottom:14px;
 }
+.menu {
+    display: none;
+  position: fixed;
+  top: 0;
+  right: -100%; /* 初期状態では画面の外に隠れている */
+  width: 300px;
+  height: 100%;
+  background-color: #fafad2;
+  color: #333;
+  transition: right 0.3s ease; /* スライドインのアニメーション */
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* メニューが開いているとき */
+.menu.open {
+  right: 0;
+}
+
+/* ボタンのスタイル */
+.hamburger {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* バツ印に変化するスタイル */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* メニューリストのスタイル */
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 80px;
+}
+
+.menu li {
+  padding: 20px 0;
+  border-bottom: 1px solid #444;
+}
+
+.menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
 .category-list {
     display: flex;
     position: relative;
@@ -252,7 +321,9 @@ section {
 .slider .slick-slide {
     height: 559px; 
 }
-
+.slick-prev, .slick-next {
+    display: none !important;
+}
 /* slider dots */
 .header-post-slider .slick-dots {
     bottom: -55px; 
@@ -647,6 +718,9 @@ header-post-slider .slick-dots {
     align-items: center;
     
 }
+.card-content2 a {
+    text-decoration: none;
+}
 .thumbnail {
     width: 294px;
     transition: transform 500ms ease;
@@ -787,4 +861,234 @@ header-post-slider .slick-dots {
     background-color: #f9f9f9; /* サイトのテーマカラー（黄色） */
     border-color: #e9e9e9;
     color: #000;
+}
+
+.profile-widget {
+    padding: 20px 40px;
+    border: 1px solid #acacac;
+    border-radius: 2px;
+    text-align: center;
+    width: 100%;
+    
+}
+/* アイコン画像（円形） */
+.profile-icon img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 7px;
+}
+.adress {
+    font-size: 12px;
+}
+.phonenumber {
+    font-size: 16px;
+    margin: 15px 0 4px;
+}
+.runtime {
+    font-size: 12px;
+}
+.profile-name {
+    margin-bottom: 14px;
+}
+.profile-text {
+    font-size: 12px;
+    color: #555;
+    margin: 30px 0 42px;
+    text-align: left; /* 文章は左寄せの方が見やすいです */
+}
+/* SNSアイコンリスト */
+.profile-sns {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 29px;
+    margin-top: 20px;
+}
+
+.profile-sns ion-icon {
+    font-size: 20px;
+    color: #727272;
+    transition: color 0.3s;
+}
+
+.profile-sns a:hover ion-icon {
+    color: #9a9a9a; /* ホバーでテーマカラーに */
+}
+.footer-contact-links {
+    text-align: center;
+    padding-bottom: 11px;
+}
+.footer-contact-links a {
+    color: black;
+    margin: 0 12px;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+.footer-contact-links a:hover {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.footer-bottom {
+    padding: 24px 0;
+    text-align: center;
+    background-color: #ffe100;
+}
+.footer-bottom p {
+    font-size: 14px;
+    color: white;
+}
+
+
+/* レスポンシブ設定（幅1100px） */
+
+@media screen and (max-width: 1100px) {
+
+    /* header */
+    .search-wrap {
+        display: none;
+    }
+    .header_tagline {
+        height: 90px;
+        width: 100%;
+        background-color: #fff;
+        z-index: 999;
+    }
+    .header_tagline.is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        animation: slideDown 0.3s ease-out; /* ふわっと出すアニメーション */
+    }
+    .is-fixed .title-wrap {
+        padding: 30px 20px 0; /* 固定時は少しスリムにする */
+    }
+    .site_name {
+        font-size: 22px;
+    }
+    .title-wrap p {
+        display: none;
+    }
+    .header_bottom-nav {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    .drawer-list {
+        position: fixed;
+        top: 60px; /* header_taglineの高さ分下げる */
+        right: -100%; /* 最初は画面の外 */
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(255, 255, 255, 0.95);
+        transition: 0.3s;
+        list-style: none;
+        padding: 20px;
+    }
+
+    /* JSでクラスがついた時に表示 */
+    .menu.is-open .drawer-list {
+        right: 0;
+    }
+    
+    /* sec_A */
+    .sec_top_A {
+        padding-top: 0;
+    }
+    .header-post-slider {
+        margin: 0;
+        width: 100%;
+        max-width: none;
+    }
+    .slider .slick-slide {
+    height: auto !important;
+    display: flex !important;
+}
+    .post-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-right: 1px solid #ACACAC !important; /* 右側の線 */
+    box-sizing: border-box !important;
+    }
+    .card-content {
+    flex-grow: 1 !important;
+    }
+    .card-image {
+        height: auto !important;
+    }
+    .card-image img {
+        height: auto !important;   /* 高さを固定せず比率に合わせる */
+        object-fit: contain;       /* 全体が見えるようにする（または指定なしでもOK） */
+    }
+    .slider .slick-track {
+        display: flex !important;
+        align-items: stretch !important; /* これが重要：中身を一番高い要素に合わせる */
+    }
+
+    /* sec_B */
+    .pressrelease {
+        margin: 0;
+        width: 100%;
+        max-width: none;
+    }
+
+    /* sec_C */
+    .article-tabs {
+        margin: 0 25px;
+        width: auto;
+        max-width: none;
+    }
+    .button {
+        font-size: 14px;
+    }
+
+    /* footer */
+    .footer-info {
+        display: grid;
+        /* 左に1列、右に1列の計2列を作る */
+        grid-template-columns: 1fr 1fr; 
+        gap: 0 30px; /* 横の隙間は40px、縦は個別に調整 */
+    }
+
+    /* 1番目（カテゴリー）：左側。2段分ぶち抜きで占有させる */
+    .footer-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3; 
+    }
+
+    /* 2番目（アーカイブ・タグ）：右側1段目 */
+    .footer-item:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    /* 3番目（プロフィール）：右側2段目（キーワードのすぐ下に来る） */
+    .footer-item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        align-self: start; /* 上に詰める */
+        margin-top: -36px; /* タイトルの余白分だけ微調整（必要に応じて） */
+    }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+
+/* レスポンシブ設定（幅980px） */
+
+@media screen and (max-width: 980px) {
+    .pressrelease-title {
+        margin: 0 25px;
+    }
+    .pressrelease-list {
+        padding: 25px 25px;
+    }
 }
