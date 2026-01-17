@@ -82,3 +82,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+$(function() {
+  $('.hamburger').click(function() {
+    // メニューの開閉状態を切り替える
+    $('.menu').toggleClass('open');
+
+    // ハンバーガーボタンのアクティブクラスを切り替えて三本線をバツにする
+    $(this).toggleClass('active');
+  });
+});
+
+
+
+
+$(function() {
+    var $headerTagline = $('.header_tagline');
+    // 帯が元々ある位置を取得
+    var taglineOffset = $headerTagline.offset().top;
+
+    $(window).on('scroll', function() {
+        // 1100px以下のときだけ動作
+        if (window.innerWidth <= 1100) {
+            if ($(window).scrollTop() > taglineOffset) {
+                // スクロール量が位置を超えたら固定
+                $headerTagline.addClass('is-fixed');
+            } else {
+                // 上に戻ったら固定解除
+                $headerTagline.removeClass('is-fixed');
+            }
+        } else {
+            // PCサイズでは固定を強制解除
+            $headerTagline.removeClass('is-fixed');
+        }
+    });
+});
