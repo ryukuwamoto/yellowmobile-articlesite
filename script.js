@@ -155,3 +155,21 @@ $('.slider').slick({
         });
         observer.observe(trigger);
     }
+
+
+
+
+
+
+    $(function() {
+    $('.submenu-toggle').on('click', function() {
+        const $parent = $(this).closest('.has-submenu');
+        const $list = $parent.find('.submenu-list');
+
+        // リストをスライドで開閉
+        $list.slideToggle(300);
+        
+        // 親要素にクラスを付与して＋と－を切り替え
+        $parent.toggleClass('is-open');
+    });
+});
