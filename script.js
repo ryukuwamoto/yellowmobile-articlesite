@@ -99,7 +99,7 @@ $(function() {
 
 
 $(function() {
-    var $headerTagline = $('.header_tagline');
+    var $headerTagline = $('.header-title-bar');
     // 帯が元々ある位置を取得
     var taglineOffset = $headerTagline.offset().top;
 
@@ -119,3 +119,39 @@ $(function() {
         }
     });
 });
+
+
+
+
+$('.slider').slick({
+        autoplay: true,
+        dots: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 801,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+    const nav = document.querySelector('.header_bottom-nav');
+    const trigger = document.querySelector('#sticky-trigger');
+
+    if (nav && trigger) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    nav.classList.add('is-sticky');
+                } else {
+                    nav.classList.remove('is-sticky');
+                }
+            });
+        }, {
+            threshold: 0
+        });
+        observer.observe(trigger);
+    }

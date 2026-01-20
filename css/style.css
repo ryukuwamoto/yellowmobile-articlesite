@@ -29,7 +29,7 @@
 
 body {
     font-family: 'GenJyuuGothic', sans-serif;
-    font-weight: normal; /* 基本はnormal(中) */
+    font-weight: normal;
 }
 
 /* header */
@@ -107,7 +107,7 @@ body {
     background-position: center center;
     background-size: 15px;
 }
-.header_tagline {
+.header-title-bar {
     position: relative;
     width: 100vw;
     height: 130px;
@@ -121,7 +121,7 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
 }
-.site_name {
+.header-site-title {
     color: black;
     font-size: 24px;
     padding-bottom: 10px;
@@ -160,12 +160,12 @@ body {
     display: none;
   position: fixed;
   top: 0;
-  right: -100%; /* 初期状態では画面の外に隠れている */
+  right: -100%;
   width: 375px;
   height: 100%;
   background-color: #ffe100;
   color: #333;
-  transition: right 0.3s ease; /* スライドインのアニメーション */
+  transition: right 0.3s ease;
   padding: 20px;
   box-sizing: border-box;
   z-index: 10;
@@ -645,7 +645,7 @@ header-post-slider .slick-dots {
 .c_screen{
     display: none;
     pointer-events: none;
-    background-color: white; /* 背景色：薄い緑 */
+    background-color: white; 
 }
 .c_screen.active{
     display: block;
@@ -697,7 +697,7 @@ header-post-slider .slick-dots {
     height: auto;
     overflow: hidden;
 }
-.card-image2-1 {
+.article-thumb-wrap {
     width: 294px;
     height: auto;
 }
@@ -760,7 +760,7 @@ header-post-slider .slick-dots {
 .folder-sharp {
     font-size: 16px;
 }
-.item-wrap {
+.footer-cat-link {
     display: flex;
     align-items: center; 
     gap: 10px;
@@ -768,19 +768,19 @@ header-post-slider .slick-dots {
     text-decoration: none;
     color: black;
 }
-.item-wrap p {
+.footer-cat-link p {
     margin: 0;  
     line-height: 1;
     font-size: 14px; 
 }
-.item-wrap2 {
+.footer-cat-link2 {
     display: flex;
     align-items: center;
     padding: 14px 0 14px 23px;
     text-decoration: none;
     color: black;
 }
-.item-wrap2 p {
+.footer-cat-link2 p {
     margin: 0;  
     line-height: 1;
     font-size: 13px;
@@ -942,24 +942,27 @@ header-post-slider .slick-dots {
     .search-wrap {
         display: none;
     }
-    .header_tagline {
+    .header-title-bar {
         height: 90px;
         width: 100%;
         background-color: #fff;
         z-index: 999;
     }
-    .header_tagline.is-fixed {
+    .header-title-bar.is-fixed {
         position: fixed;
         top: 0;
         left: 0;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        animation: slideDown 0.3s ease-out; /* ふわっと出すアニメーション */
+        animation: slideDown 0.3s ease-out;
     }
     .is-fixed .title-wrap {
-        padding: 30px 20px 0; /* 固定時は少しスリムにする */
+        padding: 30px 20px 0;
     }
-    .site_name {
+    .header-site-title {
         font-size: 22px;
+    }
+    .header-title-bar.is-fixed .header-site-title {
+    font-size: 18px;
     }
     .title-wrap p {
         display: none;
@@ -972,8 +975,8 @@ header-post-slider .slick-dots {
     }
     .drawer-list {
         position: fixed;
-        top: 60px; /* header_taglineの高さ分下げる */
-        right: -100%; /* 最初は画面の外 */
+        top: 60px;
+        right: -100%;
         width: 100%;
         height: calc(100vh - 60px);
         background: rgba(255, 255, 255, 0.95);
@@ -1004,7 +1007,7 @@ header-post-slider .slick-dots {
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    border-right: 1px solid #ACACAC !important; /* 右側の線 */
+    border-right: 1px solid #ACACAC !important;
     box-sizing: border-box !important;
     }
     .card-content {
@@ -1014,12 +1017,12 @@ header-post-slider .slick-dots {
         height: auto !important;
     }
     .card-image img {
-        height: auto !important;   /* 高さを固定せず比率に合わせる */
-        object-fit: contain;       /* 全体が見えるようにする（または指定なしでもOK） */
+        height: auto !important;
+        object-fit: contain;
     }
     .slider .slick-track {
         display: flex !important;
-        align-items: stretch !important; /* これが重要：中身を一番高い要素に合わせる */
+        align-items: stretch !important;
     }
 
     /* sec_B */
@@ -1094,7 +1097,6 @@ header-post-slider .slick-dots {
         flex-direction: column !important;
         height: auto !important;
         overflow: visible !important;
-        gap: 40px !important;
         padding: 25px 20px !important;
     }
     .pressrelease-item {
@@ -1102,12 +1104,15 @@ header-post-slider .slick-dots {
         width: 90% !important;
         height: auto !important; 
         min-height: 0 !important;
-        margin: 0 auto;
+        margin: 30px auto 0;
         padding-bottom: 20px;
+        border-bottom: 1px solid #ebebeb;
+    }
+    .pressrelease-item:nth-child(1) {
+        margin-top: 0;
     }
     .pre-image {
         height: auto !important;
-        aspect-ratio: 16 / 9;
     }
     .pre-image img {
         height: 100% !important;
@@ -1135,7 +1140,7 @@ header-post-slider .slick-dots {
         align-items: center;
     }
     .card-image2, 
-    .card-image2-1, 
+    .article-thumb-wrap, 
     .thumbnail {
         width: 100% !important;
         height: auto !important;
@@ -1149,19 +1154,19 @@ header-post-slider .slick-dots {
 
     /* footer */
     .footer-info {
-        display: flex; /* GridからFlexに変更して縦に並べる */
+        display: flex;
         flex-direction: column;
-        gap: 40px; /* 各セクション（カテゴリー、アーカイブ等）の間の溝 */
-        padding: 0 20px; /* 左右に少し余白を作る */
+        gap: 40px;
+        padding: 0 20px;
         margin-bottom: 33px;
     }
     .footer-item:nth-child(1),
     .footer-item:nth-child(2),
     .footer-item:nth-child(3) {
-        grid-column: auto !important; /* Gridの列指定を解除 */
-        grid-row: auto !important;    /* Gridの行指定を解除 */
+        grid-column: auto !important;
+        grid-row: auto !important;
         width: 100% !important;
-        margin-top: 0 !important;     /* プロフィールにつけていたマイナスマージンを解除 */
+        margin-top: 0 !important;
         align-self: stretch !important;
     }
     .footer-item h3 {
@@ -1178,15 +1183,15 @@ header-post-slider .slick-dots {
     }
     .footer-contact-links div {
         display: flex !important;
-        flex-direction: column !important; /* 縦並びにする */
-        align-items: center;               /* 中央寄せ（左寄せなら flex-start） */
-        gap: 10px;                         /* リンク同士の上下の隙間 */
+        flex-direction: column !important;
+        align-items: center;
+        gap: 10px;
     }
     .footer-contact-links a {
         display: block !important;
         font-size: 14px;
         color: #333;
-        padding: 5px 0;                    /* タップしやすくするために上下に余白 */
+        padding: 5px 0;
     }
     .sp-only {
         display: inline;
