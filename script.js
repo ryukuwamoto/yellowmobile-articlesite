@@ -1,74 +1,54 @@
-// --- 1. タブ切り替えの制御 ---
-const buttonA = document.getElementById('a_btn');
-const buttonB = document.getElementById('b_btn');
-const buttonC = document.getElementById('c_btn');
-
-const screenA = document.querySelector('.a_screen');
-const screenB = document.querySelector('.b_screen');
-const screenC = document.querySelector('.c_screen');
-
-function resetTabs() {
-    [buttonA, buttonB, buttonC, screenA, screenB, screenC].forEach(el => {
-        el.classList.remove('active');
-    });
-}
-
-buttonA.addEventListener('click', () => {
-    resetTabs();
-    // Aはactiveクラスがない時に表示されるCSS設定なので、ここでは何もしない、
-    // もしくは以前のロジック通りAボタンにのみ特定の処理が必要なら記述
-});
-
-buttonB.addEventListener('click', () => {
-    resetTabs();
-    buttonA.classList.add('active'); // Aを隠す
-    buttonB.classList.add('active'); // Bを出す
-    screenA.classList.add('active'); // Aを隠す
-    screenB.classList.add('active'); // Bを出す
-});
-
-buttonC.addEventListener('click', () => {
-    resetTabs();
-    buttonA.classList.add('active'); // Aを隠す
-    buttonC.classList.add('active'); // Cを出す
-    screenA.classList.add('active'); // Aを隠す
-    screenC.classList.add('active'); // Cを出す
-});
-
-// --- 2. 「もっと見る」の制御（画面ごとに独立） ---
 $(function () {
-    var show = 4; // 最初に表示する件数
-    var num = 4;  // clickごとに表示したい件数
+    // 1. タブ切り替え（5つになっても自動対応版）
+    $('.category-list2 .button').on('click', function () {
+        const $clickedBtn = $(this);
+        const index = $clickedBtn.closest('.item').index(); // 0:A, 1:B, 2:C...
+        const $wrap = $clickedBtn.closest('.article-tabs');
+        
+        const $allButtons = $wrap.find('.button');
+        const $allScreens = $wrap.find('.screen > div');
 
-    // 各スクリーンごとに処理を回す
-    $('.a_screen, .b_screen, .c_screen').each(function () {
-        var $screen = $(this);
-        var $listItems = $screen.find('.list li');
-        var $moreBtn = $screen.find('.more');
+        // --- 全てを一旦リセット ---
+        $allButtons.removeClass('active');
+        $allScreens.removeClass('active');
 
-        // 初期表示の設定（4件目以降を隠す）
-        $listItems.slice(show).addClass('is-hidden');
-
-        // もし最初から4件以下なら「もっと見る」を隠しておく
-        if ($listItems.length <= show) {
-            $moreBtn.hide();
+        if (index === 0) {
+            // 【修正箇所】新着(A)が押された時
+            // 全ての active が外れた状態 = Aボタンがメイン色、A画面が表示される
+            // なので、ここではクラスを追加せず「真っさら」な状態にします
+        } else {
+            // A以外（B, C...）が押された時
+            $clickedBtn.addClass('active');   // 押したボタンを活性色に
+            $('#a_btn').addClass('active');   // Aボタンを非活性色に
+            $allScreens.eq(0).addClass('active'); // A画面を非表示(display:none)に
+            $allScreens.eq(index).addClass('active'); // 選んだ画面を表示に
         }
+    });
 
-        // その画面の中のボタンが押された時の処理
+    // 2. 「もっと見る」の制御（共通）
+    const show = 4;
+    const num = 4;
+
+    $('.screen > div').each(function () {
+        const $screen = $(this);
+        const $listItems = $screen.find('.list li');
+        const $moreBtn = $screen.find('.more');
+
+        $listItems.slice(show).addClass('is-hidden');
+        if ($listItems.length <= show) $moreBtn.hide();
+
         $moreBtn.on('click', function () {
-            var $hiddenItems = $listItems.filter('.is-hidden');
-            var $target = $hiddenItems.slice(0, num);
+            const $hiddenItems = $listItems.filter('.is-hidden');
+            const $target = $hiddenItems.slice(0, num);
 
-            $target.removeClass('is-hidden').hide().fadeIn(400);
+            $target.removeClass('is-hidden').hide().fadeIn(400, function() {
+                $(this).css('display', 'flex');
+            });
 
-            // 全て表示されたらその画面のボタンだけ消す
-            if ($hiddenItems.length <= num) {
-                $(this).fadeOut();
-            }
+            if ($hiddenItems.length <= num) $(this).fadeOut();
         });
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const archiveSelect = document.getElementById('archives-dropdown-4');
