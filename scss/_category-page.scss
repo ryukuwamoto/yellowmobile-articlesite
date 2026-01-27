@@ -1,10 +1,40 @@
 @use "variables" as *;
 
-
+.full-width-line {
+    width: 100%;
+    border-top: 1px solid $color-border;
+}
+.breadcrumb {
+  margin: 16px 0 42px;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline;
+    font-weight: normal;
+    &:after {
+        content: ">";
+        padding: 0 0.2em;
+        color: #727272;
+    }
+    &:last-child:after {
+        content: "";
+    }
+    a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #727272;
+        transition: all 0.3s ease;
+        &:hover {
+         text-decoration: underline;
+         transition: all 0.3s ease;
+        }
+    }
+  }
+}
 
 .flex-container {
     display: flex;
-    gap: 50px;
+    gap: 40px;
     align-items: flex-start; // 中身の高さが違っても上に揃える
     @media screen and (max-width: 1000px) {
         gap: 30px;
@@ -41,6 +71,29 @@
 .sec_top_C {
     flex: 1;
 }
+.button {
+    &[id^="d_"], &[id^="e_"] { 
+        background-color: $color-bg-light; 
+        &.active { background-color: $color-main; } 
+    }
+}
+.screen {
+    .d_screen, .e_screen {
+        width: 100%;
+        display: none;
+        background-color: white;
+        transition: opacity 0.5s ease;
+        &.active { display: block !important;
+                   pointer-events: auto;
+        }
+    }
+}
+.c-fontsize {
+    font-size: 14px;
+    @media screen and (max-width: 1100px) {
+        font-size: 13px;
+    }
+}
 
 
 /* sidebar */
@@ -48,6 +101,9 @@
     width: 260px;
     @media screen and (max-width: 1000px) {
         width: 240px;
+    }
+    @media screen and (max-width: 800px) {
+        display: none;
     }
 }
 .sidebar-inner {
