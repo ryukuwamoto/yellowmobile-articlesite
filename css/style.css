@@ -1057,7 +1057,7 @@ body {
 /* -------------------------------------------
   Common Layout
 ------------------------------------------- */
-section {
+.section {
   position: relative;
   display: block;
 }
@@ -1249,6 +1249,7 @@ section {
   margin-bottom: 22px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   overflow: hidden;
   -webkit-transition: opacity 0.2s ease;
@@ -1415,11 +1416,13 @@ section {
   text-decoration: underline;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
 @media screen and (max-width: 800px) {
   .pre-articletitle {
+    line-clamp: none !important;
     -webkit-line-clamp: none !important;
     height: auto !important;
     font-size: 16px;
@@ -1431,7 +1434,7 @@ section {
   Section C: Article Tabs
 ------------------------------------------- */
 @media screen and (max-width: 1100px) {
-  .article-tabs {
+  .sec_C-wrap {
     margin: 0 25px;
     width: auto;
     max-width: none;
@@ -1462,8 +1465,8 @@ section {
 }
 
 .button {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 500;
   width: 100%;
   height: 100%;
   border: none;
@@ -1604,4 +1607,130 @@ section {
   border-radius: 2px;
   cursor: pointer;
   background: none;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media screen and (max-width: 1000px) {
+  .flex-container {
+    gap: 30px;
+  }
+}
+
+.category-title-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 46px;
+}
+.category-title-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 14px;
+  background-color: #ffe100;
+  z-index: -1;
+}
+
+.page-title {
+  font-weight: 500;
+  font-size: 24px;
+  padding-left: 79px;
+}
+
+.airplane-image {
+  position: absolute;
+  left: 7px;
+  top: -3px;
+  height: 45px;
+  width: 62px;
+}
+
+.sec_top_C {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* sidebar */
+.sidebar-wrap {
+  width: 260px;
+}
+@media screen and (max-width: 1000px) {
+  .sidebar-wrap {
+    width: 240px;
+  }
+}
+
+.sidebar-inner {
+  margin-top: 21px;
+  text-align: center;
+  border: 1px solid #ACACAC;
+  border-radius: 2px;
+}
+
+.sidebar-inner2 {
+  margin-top: 40px;
+  text-align: center;
+  border: 1px solid #ACACAC;
+  border-radius: 2px;
+}
+
+.sidebar-title {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 17px 0;
+  margin: 0 14px;
+}
+
+.sidebar-list {
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 14px;
+}
+
+.sidebar-item {
+  padding: 18px 0;
+  border-top: 1px solid #ACACAC;
+}
+.sidebar-item a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.sidebar-item a:hover {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.sidebar-item img {
+  width: 105px;
+  height: 70px;
+}
+.sidebar-item p {
+  color: black;
+  height: 74px;
+  font-size: 12px;
+  font-weight: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */
