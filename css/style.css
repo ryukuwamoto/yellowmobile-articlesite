@@ -1453,6 +1453,12 @@ body {
   padding: 0;
   width: 100%;
 }
+@media screen and (max-width: 800px) {
+  .category-list2 {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
 
 .item {
   width: calc((100% - 10px) / 3);
@@ -1463,7 +1469,7 @@ body {
 }
 @media screen and (max-width: 800px) {
   .item {
-    height: 40px;
+    height: 44px;
   }
 }
 
@@ -1481,11 +1487,6 @@ body {
 @media screen and (max-width: 1100px) {
   .button {
     font-size: 14px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .button {
-    font-size: 12px;
   }
 }
 .button[id^=a_] {
@@ -1533,15 +1534,24 @@ body {
   margin-bottom: 60px;
 }
 .list li {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 256px;
   padding: 30px 0;
-  border-bottom: 1px solid #ACACAC;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.list li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ACACAC;
 }
 @media screen and (max-width: 800px) {
   .list li {
@@ -1554,6 +1564,12 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .list li::after {
+    width: 100vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 .list li.is-hidden {
@@ -1696,6 +1712,10 @@ body {
 @media screen and (max-width: 800px) {
   .category-title-wrap::after {
     height: 10px;
+    width: 100vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 

@@ -61,7 +61,10 @@
             z-index: -1;
             @media screen and (max-width: 800px) {
                 height: 10px;
-    }
+                width: 100vw;
+                left: 50%;
+                transform: translateX(-50%);
+        }
     }
 }
 .page-title {
