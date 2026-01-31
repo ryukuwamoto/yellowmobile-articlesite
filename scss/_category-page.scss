@@ -7,9 +7,10 @@
     }
 }
 .breadcrumb {
-  margin: 16px 0 42px;
+  margin: 16px 0 50px;
   padding: 0;
   list-style: none;
+  @media screen and (max-width: 800px) { margin: 8px 0 36px; }
   li {
     display: inline;
     font-weight: normal;
@@ -77,7 +78,7 @@
         padding-left: 60px;
     }
 }
-.airplane-image {
+.icon-image {
     position: absolute;
     left: 7px;
     top: -3px;

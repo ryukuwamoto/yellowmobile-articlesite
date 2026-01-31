@@ -1648,9 +1648,14 @@ body {
 }
 
 .breadcrumb {
-  margin: 16px 0 42px;
+  margin: 16px 0 50px;
   padding: 0;
   list-style: none;
+}
+@media screen and (max-width: 800px) {
+  .breadcrumb {
+    margin: 8px 0 36px;
+  }
 }
 .breadcrumb li {
   display: inline;
@@ -1741,7 +1746,7 @@ body {
   }
 }
 
-.airplane-image {
+.icon-image {
   position: absolute;
   left: 7px;
   top: -3px;
@@ -1749,7 +1754,7 @@ body {
   width: 62px;
 }
 @media screen and (max-width: 800px) {
-  .airplane-image {
+  .icon-image {
     top: 0;
     height: 33px;
     width: 47px;

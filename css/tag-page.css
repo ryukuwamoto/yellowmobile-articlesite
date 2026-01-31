@@ -1,0 +1,19 @@
+.category-title-wrap {
+  margin-bottom: 10px;
+}
+
+.icon-image {
+  position: absolute;
+  left: 26px;
+  top: -8px;
+  height: 48px;
+  width: 39px;
+}
+@media screen and (max-width: 800px) {
+  .icon-image {
+    top: -2;
+    left: 20px;
+    height: 35px;
+    width: 28px;
+  }
+}/*# sourceMappingURL=tag-page.css.map */
