@@ -1489,6 +1489,11 @@ body {
     font-size: 14px;
   }
 }
+@media screen and (max-width: 800px) {
+  .button {
+    font-size: 13px;
+  }
+}
 .button[id^=a_] {
   background-color: #ffe100;
 }
@@ -1665,6 +1670,11 @@ body {
   color: #727272;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+@media screen and (max-width: 800px) {
+  .breadcrumb li a {
+    font-size: 12px;
+  }
 }
 .breadcrumb li a:hover {
   text-decoration: underline;

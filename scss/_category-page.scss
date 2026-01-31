@@ -26,6 +26,7 @@
         text-decoration: none;
         color: #727272;
         transition: all 0.3s ease;
+        @media screen and (max-width: 800px) { font-size: 12px; }
         &:hover {
          text-decoration: underline;
          transition: all 0.3s ease;
