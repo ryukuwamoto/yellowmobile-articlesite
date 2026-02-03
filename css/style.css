@@ -963,6 +963,16 @@ body {
   margin-bottom: 7px;
 }
 
+.adress {
+  font-size: 12px;
+  padding: 14px 0;
+}
+
+.runtime {
+  font-size: 12px;
+  padding-top: 4px;
+}
+
 .profile-text {
   font-size: 12px;
   color: #555;
@@ -1452,12 +1462,8 @@ body {
   list-style: none;
   padding: 0;
   width: 100%;
-}
-@media screen and (max-width: 800px) {
-  .category-list2 {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .item {
@@ -1474,8 +1480,19 @@ body {
 }
 
 .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
   font-size: 15px;
   font-weight: 500;
+  color: black;
   width: 100%;
   height: 100%;
   border: none;
@@ -1767,21 +1784,21 @@ body {
           flex: 1;
 }
 
-.button[id^=d_], .button[id^=e_] {
+.button[id^=d_], .button[id^=e_], .button[id^=f_] {
   background-color: #fff9cc;
 }
-.button[id^=d_].active, .button[id^=e_].active {
+.button[id^=d_].active, .button[id^=e_].active, .button[id^=f_].active {
   background-color: #ffe100;
 }
 
-.screen .d_screen, .screen .e_screen {
+.screen .d_screen, .screen .e_screen, .screen .f_screen {
   width: 100%;
   display: none;
   background-color: white;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
-.screen .d_screen.active, .screen .e_screen.active {
+.screen .d_screen.active, .screen .e_screen.active, .screen .f_screen.active {
   display: block !important;
   pointer-events: auto;
 }

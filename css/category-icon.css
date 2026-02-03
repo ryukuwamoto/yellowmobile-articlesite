@@ -1,0 +1,46 @@
+.dest-icon {
+  position: absolute;
+  left: 7px;
+  top: -3px;
+  height: 45px;
+  width: 62px;
+}
+@media screen and (max-width: 800px) {
+  .dest-icon {
+    top: 0;
+    height: 33px;
+    width: 47px;
+  }
+}
+
+.SIM-icon {
+  position: absolute;
+  left: 34px;
+  top: -5px;
+  height: 44px;
+  width: 31px;
+}
+@media screen and (max-width: 800px) {
+  .SIM-icon {
+    top: 0;
+    left: 30px;
+    height: 32px;
+    width: 23px;
+  }
+}
+
+.dev-icon {
+  position: absolute;
+  left: 38px;
+  top: -5px;
+  height: 47px;
+  width: 29px;
+}
+@media screen and (max-width: 800px) {
+  .dev-icon {
+    top: 0;
+    left: 30px;
+    height: 33px;
+    width: 21px;
+  }
+}/*# sourceMappingURL=category-icon.css.map */

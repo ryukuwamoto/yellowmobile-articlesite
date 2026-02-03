@@ -1,3 +1,57 @@
+// リンクづけ
+$(function () {
+    $('.category-list2 .button').on('click', function (e) {
+
+        e.preventDefault(); 
+
+        const $clickedBtn = $(this);
+        const index = $clickedBtn.closest('.item').index();
+        const $wrap = $clickedBtn.closest('.article-tabs');
+        const $allButtons = $wrap.find('.button');
+        const $allScreens = $wrap.find('.screen > div');
+
+        $allButtons.removeClass('active');
+        $allScreens.removeClass('active');
+
+        if (index === 0) {
+
+        } else {
+            $clickedBtn.addClass('active');
+            $('#a_btn').addClass('active');
+            $allScreens.eq(0).addClass('active');
+            $allScreens.eq(index).addClass('active');
+        }
+
+        const hash = $clickedBtn.attr('href');
+        history.replaceState(null, null, hash); 
+    });
+
+    const initialHash = window.location.hash;
+    if (initialHash) {
+
+        $(`.category-list2 .button[href="${initialHash}"]`).trigger('click');
+    }
+});
+
+$(window).on('hashchange load', function() {
+    const hash = window.location.hash;
+
+    if (hash) {
+
+        const $targetBtn = $(`.category-list2 .button[href="${hash}"]`);
+        
+        if ($targetBtn.length) {
+
+            $targetBtn.trigger('click');
+        }
+    } else {
+
+        $('#a_btn').trigger('click');
+    }
+});
+
+
+
 $(function () {
     // 1. タブ切り替え（5つになっても自動対応版）
     $('.category-list2 .button').on('click', function () {

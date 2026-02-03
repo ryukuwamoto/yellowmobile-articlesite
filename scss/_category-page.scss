@@ -94,13 +94,13 @@
     flex: 1;
 }
 .button {
-    &[id^="d_"], &[id^="e_"] { 
+    &[id^="d_"], &[id^="e_"], &[id^="f_"] { 
         background-color: $color-bg-light; 
         &.active { background-color: $color-main; } 
     }
 }
 .screen {
-    .d_screen, .e_screen {
+    .d_screen, .e_screen, .f_screen {
         width: 100%;
         display: none;
         background-color: white;
@@ -116,6 +116,8 @@
         font-size: 13px;
     }
 }
+
+
 
 /* sidebar */
 .sidebar-wrap {
