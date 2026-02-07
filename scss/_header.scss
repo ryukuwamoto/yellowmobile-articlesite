@@ -431,7 +431,7 @@
 
     @for $i from 1 through 6 {
         &:nth-child(#{$i}) img {
-            $margins: (-100px, -114px, -83px, -142px, -118px, -86px);
+            $margins: (-100px, -114px, -86px, -142px, -118px, -86px);
             margin-left: nth($margins, $i);
         }
     }

@@ -18,7 +18,7 @@
     width: 31px;
     @media screen and (max-width: 800px) {
         top: 0;
-        left: 30px;
+        left: 22px;
         height: 32px;
         width: 23px;
     }
@@ -31,8 +31,34 @@
     width: 29px;
     @media screen and (max-width: 800px) {
         top: 0;
-        left: 30px;
+        left: 24px;
         height: 33px;
         width: 21px;
+    }
+}
+.feature-tips-icon {
+    position: absolute;
+    left: 32px;
+    top: -12px;
+    height: 52px;
+    width: 30px;
+    @media screen and (max-width: 800px) {
+        top: -7px;
+        left: 21px;
+        height: 40px;
+        width: 23px;
+    }
+}
+.movie-icon {
+    position: absolute;
+    left: 22px;
+    top: 1px;
+    height: 33px;
+    width: 42px;
+    @media screen and (max-width: 800px) {
+        top: 2px;
+        left: 14px;
+        height: 26px;
+        width: 34px;
     }
 }
