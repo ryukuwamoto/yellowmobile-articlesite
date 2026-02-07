@@ -354,6 +354,9 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 60px;
+    @media screen and (max-width: 800px) {
+        margin-bottom: 40px;
+    }
 
     li {
         position: relative;
@@ -418,10 +421,20 @@
     display: block;
     width: fit-content;
     margin: 0 auto 60px;
-    padding: 15px 90px;
+    padding: 12px 90px;
     color: #727272;
     border: 1px solid #727272;
     border-radius: 2px;
     cursor: pointer;
     background: none;
+    @media screen and (max-width: 800px) {
+        padding: 10px 70px;
+        margin: 0 auto 40px;
+    }
+    button {
+        font-size: 14px;
+        @media screen and (max-width: 800px) {
+            font-size: 13px;
+        }
+    }
 }

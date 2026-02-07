@@ -23,6 +23,19 @@
         width: 23px;
     }
 }
+.eSIM-icon {
+    position: absolute;
+    left: 27px;
+    top: 0px;
+    height: 36px;
+    width: 36px;
+    @media screen and (max-width: 800px) {
+        top: 2px;
+        left: 20px;
+        height: 26px;
+        width: 26px;
+    }
+}
 .dev-icon {
     position: absolute;
     left: 38px;
