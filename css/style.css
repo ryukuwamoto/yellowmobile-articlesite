@@ -1468,14 +1468,14 @@ body {
 
 .item {
   width: calc((100% - 10px) / 3);
-  height: 54px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 @media screen and (max-width: 800px) {
   .item {
-    height: 44px;
+    height: 36px;
   }
 }
 
@@ -1508,7 +1508,7 @@ body {
 }
 @media screen and (max-width: 800px) {
   .button {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 .button[id^=a_] {

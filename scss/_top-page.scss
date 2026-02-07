@@ -305,9 +305,9 @@
 
 .item {
     width: calc((100% - 10px) / 3);
-    height: 54px;
+    height: 50px;
     display: flex;
-    @media screen and (max-width: 800px) { height: 44px; }
+    @media screen and (max-width: 800px) { height: 36px; }
 }
 
 .button {
@@ -325,7 +325,7 @@
     transition: background-color 0.3s;
 
     @media screen and (max-width: 1100px) { font-size: 14px; }
-    @media screen and (max-width: 800px) { font-size: 13px; }
+    @media screen and (max-width: 800px) { font-size: 12px; }
     &[id^="a_"] { background-color: $color-main; &.active { background-color: $color-bg-light; } }
     &[id^="b_"], &[id^="c_"] { background-color: $color-bg-light; &.active { background-color: $color-main; } }
 }
