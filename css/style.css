@@ -782,7 +782,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 40px;
-    padding: 0 20px;
+    padding: 0;
     margin-bottom: 33px;
   }
 }
@@ -1445,7 +1445,7 @@ body {
 ------------------------------------------- */
 @media screen and (max-width: 1100px) {
   .sec_C-wrap {
-    margin: 0 25px;
+    margin: 0 15px;
     width: auto;
     max-width: none;
   }
