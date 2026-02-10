@@ -27,9 +27,9 @@
     padding: 34px 0 24px;
     color: black;
     img {
-        height: 150px;
+        height: 70px;
         @media screen and (max-width: 800px) {
-            height: 100px;
+            height: 50px;
         }
     }
 
@@ -37,7 +37,7 @@
         padding: 28px 0 18px;
     }
     p {
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 500;
         @media screen and (max-width: 800px) {
         font-size: 10px;
@@ -48,7 +48,7 @@
     font-size: 18px;
     padding-bottom: 3px;
     @media screen and (max-width: 800px) {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 .header img {
