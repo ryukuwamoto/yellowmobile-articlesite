@@ -189,4 +189,20 @@ body {
 }
 .post-navigation .nav-next .nav-label {
   text-align: right;
+}
+
+.article-main-content {
+  line-height: 1.5;
+}
+.article-main-content p {
+  margin-bottom: 1.5em;
+}
+.article-main-content li {
+  margin-bottom: 0.5em;
+}
+.article-main-content .blog-table {
+  line-height: 1.5;
+}
+.article-main-content h2 {
+  margin: 1.5em 0 1em;
 }/*# sourceMappingURL=article-page.css.map */
