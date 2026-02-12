@@ -345,7 +345,6 @@
             pointer-events: auto;
         }
     }
-    // A画面のデフォルト表示
     .a_screen { display: block; &.active { display: none; } }
 }
 

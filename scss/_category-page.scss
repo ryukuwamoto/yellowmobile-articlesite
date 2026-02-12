@@ -39,7 +39,7 @@
 .flex-container {
     display: flex;
     gap: 40px;
-    align-items: flex-start; // 中身の高さが違っても上に揃える
+    align-items: flex-start;
     @media screen and (max-width: 1000px) {
         gap: 30px;
     }
