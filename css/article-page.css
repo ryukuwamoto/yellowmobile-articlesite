@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "GenJyuuGothic";
   src: url("https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/GenJyuuGothic-Bold.ttf") format("truetype");
@@ -30,6 +31,15 @@ body {
   font-family: "GenJyuuGothic", sans-serif;
   font-weight: normal;
   color: #333;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* paddingやborderによるサイズ膨張を防止 */
 }
 
 .article-wrap {
@@ -125,11 +135,6 @@ body {
   border: 1.5px solid #727272;
 }
 
-.article-main-content img {
-  width: 100%;
-  padding-bottom: 20px;
-}
-
 .post-navigation {
   margin: 0 0 40px;
   display: -webkit-box;
@@ -192,17 +197,42 @@ body {
 }
 
 .article-main-content {
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 16px;
+}
+@media screen and (max-width: 800px) {
+  .article-main-content {
+    font-size: 14px;
+  }
+}
+.article-main-content img {
+  width: 100%;
+  padding-bottom: 20px;
 }
 .article-main-content p {
   margin-bottom: 1.5em;
 }
-.article-main-content li {
+.article-main-content ol {
+  list-style-position: inside;
+  padding: 0;
+}
+.article-main-content ul {
+  list-style-position: inside;
+  padding: 0;
+}
+.article-main-content ul li {
   margin-bottom: 0.5em;
 }
 .article-main-content .blog-table {
   line-height: 1.5;
 }
 .article-main-content h2 {
-  margin: 1.5em 0 1em;
+  font-size: 1.5em;
+  margin: 2em 0 0.6em;
+  border-left: 6px solid #ffe100;
+  padding-left: 15px;
+}
+.article-main-content h3 {
+  font-size: 1.25em;
+  margin: 1em 0 0.5em;
 }/*# sourceMappingURL=article-page.css.map */

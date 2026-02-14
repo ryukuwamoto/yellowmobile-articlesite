@@ -124,26 +124,6 @@ $(function() {
 
 
 
-// ハンバーガーメニュー後ろ
-$(function() {
-    var $headerTagline = $('.header-title-bar');
-    var taglineOffset = $headerTagline.offset().top;
-
-    $(window).on('scroll', function() {
-        if (window.innerWidth <= 1100) {
-            if ($(window).scrollTop() > taglineOffset) {
-                $headerTagline.addClass('is-fixed');
-            } else {
-                $headerTagline.removeClass('is-fixed');
-            }
-        } else {
-            $headerTagline.removeClass('is-fixed');
-        }
-    });
-});
-
-
-
 // スライダー
 $('.slider').slick({
         autoplay: true,
