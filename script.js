@@ -99,14 +99,16 @@ $(function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+
+//アーカイブ制御
+/*document.addEventListener('DOMContentLoaded', function() {
     const archiveSelect = document.getElementById('archives-dropdown-4');
 
     if (archiveSelect) {
         archiveSelect.addEventListener('change', function() {
             const url = this.value;
             if (url) {
-                window.location.href = url; // 選択されたURLに移動
+                window.location.href = url;
             }
         });
     }
