@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/*
+Theme Name: Yellow mobile article page
+Author: Kuwamoto Ryu
+*/
 @font-face {
   font-family: "GenJyuuGothic";
   src: url("https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/GenJyuuGothic-Bold.ttf") format("truetype");
@@ -42,6 +46,10 @@ body {
           box-sizing: border-box; /* paddingやborderによるサイズ膨張を防止 */
 }
 
+/*
+Theme Name: Yellow mobile article page
+Author: Kuwamoto Ryu
+*/
 /* -------------------------------------------
   Header Styles
 ------------------------------------------- */
@@ -719,6 +727,10 @@ body {
             transform: translateY(0);
   }
 }
+/*
+Theme Name: Yellow mobile article page
+Author: Kuwamoto Ryu
+*/
 /* -------------------------------------------
   Footer Styles
 ------------------------------------------- */
@@ -1038,6 +1050,10 @@ body {
   }
 }
 
+/*
+Theme Name: Yellow mobile article page
+Author: Kuwamoto Ryu
+*/
 /* -------------------------------------------
   Common Layout
 ------------------------------------------- */
@@ -1647,6 +1663,10 @@ body {
   }
 }
 
+/*
+Theme Name: Yellow mobile article page
+Author: Kuwamoto Ryu
+*/
 .full-width-line {
   width: 100%;
 }
