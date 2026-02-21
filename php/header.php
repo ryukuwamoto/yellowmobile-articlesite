@@ -6,7 +6,6 @@
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
     <link rel="canonical" href="https://www.yellowmobile.jp/blog">
     <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
     <script src="<?php echo get_template_directory_uri(); ?>/script.js" defer></script>
