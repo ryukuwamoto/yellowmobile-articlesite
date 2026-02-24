@@ -175,3 +175,36 @@ $('.slider').slick({
         $parent.toggleClass('is-open');
     });
 });
+
+
+
+// リンクをコピー
+document.addEventListener('DOMContentLoaded', function() {
+    // 全ての class="copy-url" を取得
+    const copyBtns = document.querySelectorAll('.copy-url');
+    
+    // 取得した全てのボタンに対してループ処理
+    copyBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            // 現在のURLを取得
+            const url = window.location.href;
+            
+            // クリップボードにコピー
+            navigator.clipboard.writeText(url).then(function() {
+                // 成功時のアクション
+                alert('URLをコピーしました！');
+            }).catch(function(err) {
+                // 失敗時のアクション
+                console.error('コピーに失敗しました', err);
+                // フォールバック（古いブラウザ用など）
+                const textArea = document.createElement("textarea");
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+                alert('URLをコピーしました！');
+            });
+        });
+    });
+});

@@ -1,10 +1,8 @@
+@charset "UTF-8";
 /*
 Theme Name: Yellow mobile article page
 Author: Kuwamoto Ryu
 */
-
-@charset "UTF-8";
-
 @font-face {
   font-family: "GenJyuuGothic";
   src: url("https://gigaplus.makeshop.jp/yemoba4818/YM-articlesaite/font/GenJyuuGothic-Bold.ttf") format("truetype");
@@ -213,6 +211,8 @@ body {
 }
 .article-main-content img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
   padding-bottom: 20px;
 }
 .article-main-content p {
