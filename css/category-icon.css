@@ -95,4 +95,20 @@ Author: Kuwamoto Ryu
     height: 26px;
     width: 34px;
   }
+}
+
+.search-icon {
+  position: absolute;
+  left: 24px;
+  top: 0px;
+  height: 40px;
+  width: 39px;
+}
+@media screen and (max-width: 800px) {
+  .search-icon {
+    top: 2px;
+    left: 19px;
+    height: 30px;
+    width: 29px;
+  }
 }/*# sourceMappingURL=category-icon.css.map */
