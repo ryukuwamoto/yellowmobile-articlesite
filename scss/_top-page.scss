@@ -389,13 +389,22 @@
 
 .card-image2 {
     width: 294px;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
     @media screen and (max-width: 800px) { width: 100% !important; }
 
     .thumbnail {
-        width: 294px;
+        width: 100%;
+        max-width: none !important;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3 / 2;
         transition: transform 0.5s ease;
-        @media screen and (max-width: 800px) { width: 100% !important; }
+        @media screen and (max-width: 800px) { 
+            width: 100% !important; 
+            max-width: none !important;
+            height: auto;
+        }
     }
 
     &:hover .thumbnail { transform: scale(1.05); }

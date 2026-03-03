@@ -1596,6 +1596,7 @@ Author: Kuwamoto Ryu
 
 .card-image2 {
   width: 294px;
+  aspect-ratio: 3/2;
   overflow: hidden;
 }
 @media screen and (max-width: 800px) {
@@ -1604,7 +1605,12 @@ Author: Kuwamoto Ryu
   }
 }
 .card-image2 .thumbnail {
-  width: 294px;
+  width: 100%;
+  max-width: none !important;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 3/2;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
@@ -1613,6 +1619,8 @@ Author: Kuwamoto Ryu
 @media screen and (max-width: 800px) {
   .card-image2 .thumbnail {
     width: 100% !important;
+    max-width: none !important;
+    height: auto;
   }
 }
 .card-image2:hover .thumbnail {
